@@ -8,7 +8,7 @@ packer {
 }
 
 source "amazon-ebs" "image" {
-        ami_name             = "golden-image {{timestamp}}"
+        ami_name             = "project-image {{timestamp}}"
         ssh_private_key_file = "~/.ssh/id_rsa"
         ssh_keypair_name     = "packer"
         instance_type        = "t2.micro"
@@ -20,7 +20,7 @@ source "amazon-ebs" "image" {
         region               = "us-east-1"
         source_ami = "ami-0c5f64f4c16e68c88"
         run_tags = {
-                Name = "Packer instance for golden-image"
+                Name = "Packer instance for project-image"
         }
 }
 

@@ -1,6 +1,6 @@
 resource "aws_security_group" "my_sg" {
   name        = "my_sg"
-  description = "Allow incoming HTTP Connections"
+  description = "Allow TLS inbound traffic and all outbound traffic"
   vpc_id      = aws_vpc.Project.id
 
   ingress {

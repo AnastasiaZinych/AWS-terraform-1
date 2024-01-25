@@ -44,3 +44,46 @@ variable "private_subnet3" {
   type        = string
   default     = "10.0.6.0/24"
 }
+
+variable "region" {
+  description = "provide a region for your code"
+  type        = string
+  default     = ""
+}
+
+variable "tags" {
+  description = "please specify tags"
+  type        = map(any)
+  default     = {}
+}
+
+variable "instance_type" {
+  description = "please provide an instance type"
+  type        = string
+  default     = ""
+}
+
+variable "key_name" {
+  description = "please provide a key name"
+  type        = string
+  default     = ""
+}
+
+
+variable create {
+  description = "should I create resource? "
+  type = bool 
+  default = false
+}
+
+variable "instance_username" {
+  description = "user to ssh to remote host"
+  type        = string
+  default     = "ec2-user"
+}
+
+variable "path_to_private_key" {
+  description = "private key location on terraform instance"
+  type        = string
+  default     = "/home/ec2-user/.ssh/id_rsa"
+}
