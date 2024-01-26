@@ -92,13 +92,13 @@ variable "path_to_private_key" {
 variable "domain_name" {
   description = "provide domain name"
   type        = string
-  default     = "proaws.com"
+  default     = "awszinych.net"
 }
 
 variable "zone_id" {
   description = "provide zone id"
   type        = string
-  default     = "Z07181082BXI0TVMQMHS2"
+  default     = "Z08474008GXELP7I7JYI"
 }
 
 variable "database_name" {
@@ -135,4 +135,10 @@ variable "availability_zones" {
   type        = list(string)
   description = "Availability Zones"
   default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
+}
+
+variable "cidr_block" {
+  description = "please provide a cidr_block information"
+  type        = string
+  default     = "10.0.0.0/16"
 }

@@ -1,6 +1,6 @@
 # Create ASG
 resource "aws_autoscaling_group" "wordpress_asg" {
-  name                =   "wordpress_asg"
+  name                = "wordpress_asg"
   max_size            = 99
   min_size            = 1
   health_check_type   = "ELB"
