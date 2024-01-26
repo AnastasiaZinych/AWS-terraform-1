@@ -37,11 +37,11 @@ resource "aws_instance" "wordpress" {
       "sudo systemctl enable httpd",
       "sudo amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2",
       "cd /var/www/html",
-      " sudo wget https://wordpress.org/latest.tar.gz",
+      "sudo wget https://wordpress.org/latest.tar.gz",
       "sudo tar -xzf latest.tar.gz",
-      " sudo cp -R wordpress/* /var/www/html/",
-      " sudo chown -R apache:apache /var/www/html/",
-      " sudo systemctl restart httpd"
+      "sudo cp -R wordpress/* /var/www/html/",
+      "sudo chown -R apache:apache /var/www/html/",
+      "sudo systemctl restart httpd"
     ]
   }
 }

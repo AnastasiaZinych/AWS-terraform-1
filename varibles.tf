@@ -46,9 +46,9 @@ variable "private_subnet3" {
 }
 
 variable "region" {
-  description = "provide a region for your code"
+  description = "please provide a region information"
   type        = string
-  default     = ""
+  default     = "us-east-1"
 }
 
 variable "tags" {
@@ -86,4 +86,53 @@ variable "path_to_private_key" {
   description = "private key location on terraform instance"
   type        = string
   default     = "/home/ec2-user/.ssh/id_rsa"
+}
+
+
+variable "domain_name" {
+  description = "provide domain name"
+  type        = string
+  default     = "proaws.com"
+}
+
+variable "zone_id" {
+  description = "provide zone id"
+  type        = string
+  default     = "Z07181082BXI0TVMQMHS2"
+}
+
+variable "database_name" {
+  description = "name of RDS database"
+  type        = string
+  default     = "my_database"
+}
+
+variable "cluster_identifier" {
+  description = "cluster identifier of RDS database"
+  type        = string
+  default     = "database-1"
+}
+
+variable "master_username" {
+  description = "master username"
+  type        = string
+  default     = "team1"
+}
+
+variable "master_password" {
+  description = "master password"
+  type        = string
+  default     = "WooHooWeDidIt!1"
+}
+
+variable "availability_zone" {
+  description = "availability zone in region"
+  type        = string
+  default     = "us-east-1a"
+}
+
+variable "availability_zones" {
+  type        = list(string)
+  description = "Availability Zones"
+  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
 }
