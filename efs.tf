@@ -6,10 +6,6 @@ resource "aws_efs_file_system" "project_efs" {
     transition_to_ia = "AFTER_7_DAYS"
   }
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 03f37bc36c9de20c4f12663bab6a7f115d12d45e
 # Define the mount targets for the EFS file system
 resource "aws_efs_mount_target" "project" {
   file_system_id         = aws_efs_file_system.project_efs.id

@@ -6,6 +6,6 @@ resource "aws_launch_template" "mlt" {
   key_name      =  aws_key_pair.project.id
   network_interfaces {
     associate_public_ip_address = true
-    security_groups             = ["sg-0bb3f0245d6955eda"]
+    security_groups             = [aws_security_group.my_sg.id]
   }
 }

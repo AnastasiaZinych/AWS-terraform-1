@@ -6,7 +6,9 @@ resource "aws_autoscaling_group" "wordpress_asg" {
   health_check_type   = "ELB"
   desired_capacity    = 1
   
-  #target_group_arns   = ["arn:aws:elasticloadbalancing:us-east-1:336272677245:targetgroup/project-tg/0b5f3667087281b3"]
+  target_group_arns   = [
+    aws_alb_target_group.project-tg.arn
+    ]
   vpc_zone_identifier = [aws_subnet.public1.id, aws_subnet.public2.id, aws_subnet.public3.id]
   launch_template {
     id      = aws_launch_template.mlt.id
