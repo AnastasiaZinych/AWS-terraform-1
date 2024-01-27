@@ -1,4 +1,4 @@
-#Specify AMI Linux-2
+# Specify AMI Linux-2
 data "aws_ami" "amazon-2" {
   most_recent = true
 
@@ -9,6 +9,10 @@ data "aws_ami" "amazon-2" {
   owners = ["amazon"]
 }
 
+resource "aws_ami_from_instance" "wordpress" {
+  name               = "terraform-wordpress"
+  source_instance_id = aws_instance.wordpress.id
+}
 # Create VM 
 resource "aws_instance" "wordpress" {
   ami                         = data.aws_ami.amazon-2.id
