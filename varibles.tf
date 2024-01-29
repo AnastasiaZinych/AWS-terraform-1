@@ -57,23 +57,10 @@ variable "tags" {
   default     = {}
 }
 
-variable "instance_type" {
-  description = "please provide an instance type"
-  type        = string
-  default     = ""
-}
-
 variable "key_name" {
   description = "please provide a key name"
   type        = string
   default     = ""
-}
-
-
-variable create {
-  description = "should I create resource? "
-  type = bool 
-  default = false
 }
 
 variable "instance_username" {
